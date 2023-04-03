@@ -25,16 +25,11 @@ public class TestCafe {
         }
 
         newPage.locator("[data-testid=\"comments-area\"]").type("something!");
-
         newPage.locator("[data-testid=\"submit-button\"]").click();
 
-        String thanks = newPage.locator("[data-testid=\"thank-you-header\"]").textContent();
-        String url = newPage.url();
-        String title = newPage.title();
-
-        System.out.println(thanks);
-        System.out.println("url = " + url);
-        System.out.println("title = " + title);
+        System.out.println(newPage.locator("[data-testid=\"thank-you-header\"]").textContent());
+        System.out.println("url = " + newPage.url());
+        System.out.println("title = " + newPage.title());
 
         newPage.close();
         browser.close();
